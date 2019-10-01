@@ -19,8 +19,8 @@ p {
     border-top: 5px solid chocolate;
     margin-top: 0px;
     font-weight: bold;
-    padding: 5px
-    
+    padding: 5px;
+    border-radius: 10px;
 }
 h2 {
     background-color: chocolate;
@@ -29,6 +29,7 @@ h2 {
     text-align: center;
     margin-bottom: 0px;
     font-weight: 100;
+    border-radius: 5px;
 }
 img {
     padding: 0px 5px 5px 0px;
@@ -69,5 +70,8 @@ ul {
 }
 p:hover {
     transform: scale(1.2);
-    transition-duration: 500ms;
+    transition-duration: 1000ms;
+}
+p {
+    box-shadow: inset 5px 0px 5px olivedrab, inset -5px 0px 5px olivedrab;
 }
