@@ -1,6 +1,5 @@
 import { isCorrect } from './functions.js';
 
-let newAmount = 'something';
 const myButton = document.getElementById('action-button');
 let amountCorrect = 0;
 
@@ -36,8 +35,9 @@ myButton.onclick = () => {
     }
     console.log(amountCorrect);
     let newAmount = Math.floor((amountCorrect / 3) * 100);
-    let displayScore = (`You got ${newAmount}% of the questions correct`);
+    let displayScore = (`${userName}, you got ${newAmount}% of the questions correct`);
     let displayResults = document.getElementById('display-results');
+    displayResults.style.display = 'initial';
     displayResults.textContent = displayScore;
     isCorrect(sanitizedUserAnswer);
 };
