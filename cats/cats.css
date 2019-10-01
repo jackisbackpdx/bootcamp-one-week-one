@@ -1,0 +1,20 @@
+.Kitten {
+    height: 100px;
+    background: lightpink;
+    width: 200px;
+    border: dashed 1px yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cat-cafe {
+    height: 500px;
+    background: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+}
