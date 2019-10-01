@@ -10,9 +10,6 @@ img {
     height: 300px;
     width: 300px;
 }
-li {
-    margin-right: -9px;
-}
 p {
     background-color: beige;
     height: auto;
@@ -58,11 +55,19 @@ button {
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    margin-bottom: 1%;
+    margin-bottom: 1rem;
 }
 button:focus {
     background: darksalmon;
 }
+button:hover {
+    background: darksalmon;
+}
 ul {
     list-style: none;
+    margin-left: -2rem;
+}
+p:hover {
+    transform: scale(1.2);
+    transition-duration: 500ms;
 }
