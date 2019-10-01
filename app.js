@@ -6,7 +6,7 @@ let amountCorrect = 0;
 myButton.onclick = () => {
     alert('welcome to my quiz');
     const myConfirmation = confirm('do you want to take my quiz?');
-
+    if(myConfirmation === false) return;
     let userName = prompt('What is your name?');
 
     const userAnswer = prompt('is my cat\'s name Vincent? (yes/no)');
