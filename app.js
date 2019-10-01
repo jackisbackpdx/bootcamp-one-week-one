@@ -39,5 +39,9 @@ myButton.onclick = () => {
     let displayResults = document.getElementById('display-results');
     displayResults.style.display = 'initial';
     displayResults.textContent = displayScore;
+    newAmount -= newAmount;
+
     isCorrect(sanitizedUserAnswer);
+    isCorrect(sanitizedUserAnswer2);
+    isCorrect(sanitizedUserAnswer3);
 };

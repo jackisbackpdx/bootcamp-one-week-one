@@ -54,12 +54,15 @@ h1 {
     display: none;
 }
 button {
-    background: purple;
+    background: cornflowerblue;
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 1%;
 }
 button:focus {
-    background: red;
+    background: darksalmon;
+}
+ul {
+    list-style: none;
 }
