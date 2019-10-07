@@ -7,41 +7,63 @@ myButton.onclick = () => {
     alert('welcome to my quiz');
     const myConfirmation = confirm('do you want to take my quiz?');
     if(myConfirmation === false) return;
-    let userName = prompt('What is your name?');
+    let firstName = prompt('What is your first name');
+    let lastName = prompt('What is your last name?');
+    let fullName = firstName + ' ' + lastName;
 
-    const userAnswer = prompt('is my cat\'s name Vincent? (yes/no)');
-    const sanitizedUserAnswer = userAnswer.toLowerCase().trim();
-    if(sanitizedUserAnswer === 'yes') {
-        alert('right-o');
-        amountCorrect++;
-    } else {
-        alert('nah');
-    }
-    const userAnswer2 = prompt('Do I love Javascript');
-    const sanitizedUserAnswer2 = userAnswer2.toLowerCase().trim();
-    if(sanitizedUserAnswer2 === 'yes') {
-        alert('you are correct');
-        amountCorrect++;
-    } else {
-        alert('yo dawg try again');
-    }
-    const userAnswer3 = prompt('Is my favorite food Italian Food?');
-    const sanitizedUserAnswer3 = userAnswer3.toLowerCase().trim();
-    if(sanitizedUserAnswer3 === 'yes') {
-        alert('you are wrong');
-    } else {
-        alert('you know it!');
-        amountCorrect++;
-    }
-    console.log(amountCorrect);
+    const promptFunction = () => {
+        const userAnswer = prompt('Did I recently start wanting to take up painting? yes/no (y/n)');
+        const sanitizedUserAnswer = userAnswer.toLowerCase().trim();
+        if(isCorrect(sanitizedUserAnswer) === true){
+            alert('right-o');
+            amountCorrect++;
+        } else if(isCorrect(sanitizedUserAnswer) === false){
+            alert('nah');
+        } else if(isCorrect(sanitizedUserAnswer) === 'neither'){
+            console.log('neither');
+            alert('Please enter a valid response');
+            promptFunction();
+        }
+    };
+    
+    promptFunction();
+
+    const promptFunction2 = () => {
+        const userAnswer2 = prompt('Do I love Javascript');
+        const sanitizedUserAnswer2 = userAnswer2.toLowerCase().trim();
+        if(isCorrect(sanitizedUserAnswer2) === true) {
+            alert('you are correct');
+            amountCorrect++;
+        } else if(isCorrect(sanitizedUserAnswer2) === false){
+            alert('yo dawg try again');
+        } else if(isCorrect(sanitizedUserAnswer2) === 'neither') {
+            alert('Please enter a valid response');
+            promptFunction2();
+        }
+    };
+
+    promptFunction2();
+
+    const promptFunction3 = () => {
+        const userAnswer3 = prompt('Have I been studying web development for 3 months?');
+        const sanitizedUserAnswer3 = userAnswer3.toLowerCase().trim();
+        if(isCorrect(sanitizedUserAnswer3) === true) {
+            alert('you are wrong');
+        } else if((isCorrect(sanitizedUserAnswer3, userAnswer3) === false)) {
+            alert('you know it!');
+            amountCorrect++;
+        } else if(isCorrect(sanitizedUserAnswer3) === 'neither') {
+            alert('Please enter a valid response');
+            promptFunction3();
+        }
+    };
+
+    promptFunction3();
+
     let newAmount = Math.floor((amountCorrect / 3) * 100);
-    let displayScore = (`${userName}, you got ${newAmount}% of the questions correct`);
+    let displayScore = (`${fullName}, you got ${newAmount}% of the questions correct`);
     let displayResults = document.getElementById('display-results');
     displayResults.style.display = 'initial';
     displayResults.textContent = displayScore;
     newAmount -= newAmount;
-
-    isCorrect(sanitizedUserAnswer);
-    isCorrect(sanitizedUserAnswer2);
-    isCorrect(sanitizedUserAnswer3);
 };
